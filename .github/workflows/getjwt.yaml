@@ -17,7 +17,7 @@ jobs:
         run: |
           TOKEN=$(curl -s \
             -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
-            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=example")
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=example" | base64)
 
           echo "JWT=$TOKEN" >> $GITHUB_OUTPUT
 
