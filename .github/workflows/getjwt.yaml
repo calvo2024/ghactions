@@ -20,8 +20,4 @@ jobs:
             "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=example")
 
           echo $TOKEN | base64
-          echo "JWT=$(echo $TOKEN | base64)" >> $GITHUB_OUTPUT
-
-      - name: Print JWT
-        run: |
-          echo "${{ steps.oidc.outputs.JWT }}"
+          echo "JWT=$(echo $TOKEN | base64)"
