@@ -21,4 +21,8 @@ jobs:
             "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=example")
 
           echo $TOKEN | base64
-          echo "JWT=$(echo $TOKEN | base64)"
+                echo "JWT=$(echo $TOKEN | base64)"
+      - name: Print payload
+        run: |
+          echo "Foo: ${{ github.event.client_payload.foo }}"
+          echo "Version: ${{ github.event.client_payload.version }}"
