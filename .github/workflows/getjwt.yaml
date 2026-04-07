@@ -2,6 +2,7 @@ name: Print OIDC JWT
 
 on:
   workflow_dispatch:
+  repository_dispatch:
 
 permissions:
   id-token: write   # 👈 REQUIRED
